@@ -1,13 +1,13 @@
 const express = require("express")
-const controller = require("../controllers/responsavel")
+const controller = require("../controllers/tarefas")
 const middlewares = require("../middlewares/middlewares")
 
 const router = express.Router()
 
 router.get("/", controller.list)
-router.post("/",middlewares.validacao, controller.create)
+router.post("/", controller.create)
 router.put("/", controller.update)
-router.delete("/:id", controller.remove)
+router.delete("/id", controller.remove)
 
 
 module.exports = router

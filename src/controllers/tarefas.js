@@ -1,4 +1,4 @@
-const service = require("../services/responsavel")
+const service = require("../services/tarefas")
 
 function list (req,res) {
     return res.status(200).send({
