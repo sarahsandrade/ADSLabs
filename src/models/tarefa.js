@@ -1,5 +1,6 @@
 const database = require("../database/database")
 const Sequilize = require("sequelize")
+const Responsavel = require("./responsavel")
 
 const Tarefa = database.define("tarefas",{
     id: {
@@ -21,5 +22,6 @@ const Tarefa = database.define("tarefas",{
 }, {
     timestamp: true
 })
+Tarefa.belongsTo(Responsavel)
 
 module.exports = Tarefa

@@ -16,4 +16,5 @@ const database = new Sequilize(
 module.exports = database
 
 require("../models/responsavel")
-database.sync()
+require("../models/tarefa")
+database.sync({alter:true})

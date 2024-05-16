@@ -1,7 +1,7 @@
 const database = require("../database/database")
 const Sequilize = require("sequelize")
 
-const Responsaveis = database.define("responsaveis",{
+const Responsavel = database.define("responsaveis",{
     id: {
         type: Sequilize.INTEGER,
         primaryKey: true,
@@ -13,4 +13,4 @@ const Responsaveis = database.define("responsaveis",{
     timestamp: true
 })
 
-module.exports = Responsaveis
+module.exports = Responsavel
