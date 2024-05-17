@@ -15,6 +15,7 @@ async function update (id,dados) {
 
     tarefaEncontrada.descricao = dados.descricao
 
+
     await tarefaEncontrada.save();
     return tarefaEncontrada
 }
@@ -25,9 +26,8 @@ async function entregarTarefa (id) {
     if(dataAtual<data){
         tarefaEncontrada.pendente = false
         await tarefaEncontrada.save();
-        return tarefaEncontrada
     }
-    return res.status(400).send({messege: "responsavel tem que ter nascido no minimo em 2014"})
+    return tarefaEncontrada
 }
 
 async function remove (id) {

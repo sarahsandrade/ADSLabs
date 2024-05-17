@@ -12,7 +12,7 @@ function list (req,res) {
 function create (req,res) {
     service.create(req.body)
         .then((novaTarefa) =>{
-            return res.send({
+            return res.status(201).send({
                 message:"Nova Tarefa criada",
                 tarefa: novaTarefa
             })
@@ -24,10 +24,11 @@ function create (req,res) {
 function update (req,res) {
     service.update(req.params.id,req.body)
         .then((TarefaEditada) =>{
-            return res.status(201).send({
-                message:"Tarefa editada",
-                tarefa: TarefaEditada
-            })
+
+                return res.status(200).send({
+                    message:"Tarefa editada",
+                    tarefa: TarefaEditada
+                })
         },(error)=>{
             return res.status(500).send({message:error})
         })
@@ -35,10 +36,16 @@ function update (req,res) {
 function entregar (req,res) {
     service.entregarTarefa(req.params.id,req.body)
         .then((TarefaEntregue) =>{
-            return res.status(201).send({
-                message:"Tarefa entregue",
-                tarefa: TarefaEntregue
+            if(!TarefaEntregue.pendente)
+                return res.status(200).send({
+                    message:"Tarefa entregue",
+                    tarefa: TarefaEntregue
             })
+            if(TarefaEntregue.pendente)
+                return res.status(400).send({
+                    message:"Tarefa fora do prazo",
+            })
+
         },(error)=>{
             return res.status(500).send({message:error})
         })
