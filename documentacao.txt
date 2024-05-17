@@ -15,7 +15,7 @@ RESPONSAVEIS
 TAREFAS
     GET/tarefa/
     GET/tarefa/?responsaveiId=  - lista todas as tarefas de um responsavel
-    GET/tarefa/?responsaveiId= &pendente= -lista tarefas pendentes de um responsavel
+    GET/tarefa/?responsaveiId= &pendente= true -lista tarefas pendentes de um responsavel
     POST/tarefa/
     {
         "titulo":,
