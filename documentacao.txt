@@ -1,7 +1,7 @@
 RESPONSAVEIS
     GET/responsavel/list - listar RESPONSAVEIS
     GET/responsavel/npendentes - lista responsaveis sem atividades pendentes
-    POST/responsavel/
+    POST/responsavel/ - criar responsavel
     {
         "nome":,
         "data_nascimento":
@@ -10,22 +10,22 @@ RESPONSAVEIS
     {
         "nome":
     }
-    DELETE/responsavel/:id
+    DELETE/responsavel/:id - deletar responsavel
 
 TAREFAS
-    GET/tarefa/
+    GET/tarefa/ - listar TAREFAS
     GET/tarefa/?responsaveiId=  - lista todas as tarefas de um responsavel
     GET/tarefa/?responsaveiId= &pendente= true -lista tarefas pendentes de um responsavel
-    POST/tarefa/
+    POST/tarefa/ - criar tarefa
     {
         "titulo":,
         "descricao":,
         "data_limite": ,
         "responsaveiId":""
     }
-    PUT/tarefa/:id
+    PUT/tarefa/:id - alterar tarefa
     {
         "descricao":
     }
-    PUT/tarefa/entregar/:id
+    PUT/tarefa/entregar/:id - entregar Tarefa
     DELETE/tarefa/:id
