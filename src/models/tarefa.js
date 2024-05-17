@@ -14,9 +14,9 @@ const Tarefa = database.define("tarefas",{
         allowNull: false
     } ,
     data_limite: Sequilize.DATEONLY,
-    status: {
-        type: Sequilize.ENUM('pendente','entregue'),
-        defaultValue: 'pendente'
+    pendente: {
+        type: Sequilize.BOOLEAN,
+        defaultValue: true
     }
 
 }, {

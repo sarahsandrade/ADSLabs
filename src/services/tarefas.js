@@ -1,17 +1,37 @@
+const Responsavel = require("../models/responsavel")
+const Tarefa = require("../models/tarefa")
 
-function list () {
-    return ["Sarah","Camila","Luan"]
+async function list (queryParams){
+    return await Tarefa.findAll({where: queryParams})
 }
 
-function create () {
-    return ["Sarah","Camila","Luan"]
+async function create (dados) {
+    const novaTarefa = await Tarefa.create(dados)
+    return novaTarefa
 }
 
-function update () {
-    return ["Sarah","Camila","Luan"]
+async function update (id,dados) {
+    const tarefaEncontrada = await Tarefa.findByPk(id)
+
+    tarefaEncontrada.descricao = dados.descricao
+
+    await tarefaEncontrada.save();
+    return tarefaEncontrada
+}
+async function entregarTarefa (id) {
+    const tarefaEncontrada = await Tarefa.findByPk(id)
+    data = new Date(tarefaEncontrada.data_limite)
+    dataAtual = new Date()
+    if(dataAtual<data){
+        tarefaEncontrada.pendente = false
+        await tarefaEncontrada.save();
+        return tarefaEncontrada
+    }
+    return res.status(400).send({messege: "responsavel tem que ter nascido no minimo em 2014"})
 }
 
-function remove () {
-    return ["Sarah","Camila","Luan"]
+async function remove (id) {
+    const tarefaEncontrada = await Tarefa.findByPk(id)
+    await tarefaEncontrada.destroy()
 }
-module.exports = {list,create,update,remove}
+module.exports = {list,create,update,entregarTarefa,remove}

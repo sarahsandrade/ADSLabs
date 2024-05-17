@@ -1,18 +1,40 @@
+const Responsavel = require("../models/responsavel")
+const Tarefa = require("../models/tarefa")
 
-
-function list () {
-    return ["Sarah","Camila","Luan"]
+async function list (queryParams){
+    return await Responsavel.findAll({where: queryParams})
+}
+async function listTarefasnPendentes () {
+    const lista = []
+    const responsaveis = await Responsavel.findAll()
+    const tarefa = await Tarefa.findAll()
+    let pendente = false
+    responsaveis.forEach(responsavel => {
+        tarefa.forEach(tarefa => {
+            if(tarefa.responsaveiId===responsavel.id)
+                if(tarefa.pendente)
+                    pendente = true
+        })
+        if(!pendente)
+            lista.push(responsavel)
+    })
+    return lista
+}
+async function create (dados) {
+    const novoResponsavel = await Responsavel.create(dados)
+    return novoResponsavel
 }
 
-function create () {
-    return ["Sarah","Camila","Luan"]
+async function update (id,dados) {
+    const responsavelEncontrado = await Responsavel.findByPk(id)
+
+    responsavelEncontrado.nome = dados.nome
+    await responsavelEncontrado.save();
+    return responsavelEncontrado
 }
 
-function update () {
-    return ["Sarah","Camila","Luan"]
+async function remove (id) {
+    const responsavelEncontrado = await Responsavel.findByPk(id)
+    await responsavelEncontrado.destroy()
 }
-
-function remove () {
-    return ["Sarah","Camila","Luan"]
-}
-module.exports = {list,create,update,remove}
+module.exports = {list,listTarefasnPendentes,create,update,remove}

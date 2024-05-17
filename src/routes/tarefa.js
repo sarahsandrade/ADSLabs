@@ -6,8 +6,9 @@ const router = express.Router()
 
 router.get("/", controller.list)
 router.post("/", controller.create)
-router.put("/", controller.update)
-router.delete("/id", controller.remove)
+router.put("/:id", controller.update)
+router.put("/entregar/:id", controller.entregar)
+router.delete("/:id", controller.remove)
 
 
 module.exports = router

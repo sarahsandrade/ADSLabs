@@ -7,8 +7,14 @@ const Responsavel = database.define("responsaveis",{
         primaryKey: true,
         autoIncrement:true
     },
-    nome: Sequilize.STRING,
-    data_nascimento: Sequilize.DATEONLY
+    nome: {
+        type:Sequilize.STRING,
+        allowNull: false
+    },
+    data_nascimento: {
+        type:Sequilize.DATEONLY,
+        allowNull: false
+    }
 }, {
     timestamp: true
 })

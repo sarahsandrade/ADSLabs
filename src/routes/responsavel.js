@@ -4,9 +4,10 @@ const middlewares = require("../middlewares/middlewares")
 
 const router = express.Router()
 
-router.get("/", controller.list)
-router.post("/",middlewares.validacao, controller.create)
-router.put("/", controller.update)
+router.get("/list", controller.list)
+router.get("/npendentes", controller.listnPendentes)
+router.post("/",middlewares.validacaoR, controller.create)
+router.put("/:id", controller.update)
 router.delete("/:id", controller.remove)
 
 
