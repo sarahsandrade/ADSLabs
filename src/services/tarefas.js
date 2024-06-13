@@ -4,6 +4,12 @@ const Tarefa = require("../models/tarefa")
 async function list (queryParams){
     return await Tarefa.findAll({where: queryParams})
 }
+async function listarPorResponsavel (responsaveilId){
+    return await Tarefa.findAll({where: {
+        responsaveiId: responsaveilId,
+    } 
+    })
+}
 
 async function create (dados) {
     const novaTarefa = await Tarefa.create(dados)
@@ -34,4 +40,4 @@ async function remove (id) {
     const tarefaEncontrada = await Tarefa.findByPk(id)
     await tarefaEncontrada.destroy()
 }
-module.exports = {list,create,update,entregarTarefa,remove}
+module.exports = {list,listarPorResponsavel,create,update,entregarTarefa,remove}

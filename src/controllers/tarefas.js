@@ -8,6 +8,14 @@ function list (req,res) {
             return res.status(500).send({message:error})
         })
 }
+function listarPorResponsavel (req,res) {
+    service.listarPorResponsavel(req.params.responsaveiId)
+        .then((tarefas) => {
+            return res.send({tarefas: tarefas})
+        },(error)=>{
+            return res.status(500).send({message:error})
+        })
+}
 
 function create (req,res) {
     service.create(req.body)
@@ -63,4 +71,4 @@ function remove (req,res) {
         })
 }
 
-module.exports = {list,create,update,entregar,remove}
+module.exports = {list,listarPorResponsavel,create,update,entregar,remove}
