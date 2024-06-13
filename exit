@@ -1,0 +1,47 @@
+[33mcommit ef9fd34a039523fcb06403e327ae0b149852341a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Sarah <sarah2017.andrade@gmail.com>
+Date:   Fri May 17 00:34:47 2024 -0300
+
+    Rotas, parametros e descrições anotados
+
+[33mcommit 9145dd833185a507303fe582546b5b011d0d4a57[m
+Author: Sarah <sarah2017.andrade@gmail.com>
+Date:   Fri May 17 00:34:18 2024 -0300
+
+    Rotas, parametros e descrições anotados
+
+[33mcommit 885b23a19eb16c5619dd7394a27d56f73a92c917[m
+Author: Sarah <sarah2017.andrade@gmail.com>
+Date:   Thu May 16 23:46:04 2024 -0300
+
+    problema com update arrumado
+
+[33mcommit eadf1352050486ae892080199c70f3f898991717[m
+Author: Sarah <sarah2017.andrade@gmail.com>
+Date:   Thu May 16 22:25:28 2024 -0300
+
+    Rotas de Tarefa e Responsavel anotadas
+
+[33mcommit 8895efdb97c3d64d2c5209891021eeda2e250f2a[m
+Author: Sarah <sarah2017.andrade@gmail.com>
+Date:   Thu May 16 21:36:14 2024 -0300
+
+    CRUD de tarefa e responsavel finalizado
+
+[33mcommit 3f81b67bd5289702057f52c715b75a383dd8d841[m
+Author: Sarah <sarah2017.andrade@gmail.com>
+Date:   Thu May 16 10:38:09 2024 -0300
+
+    Tabelas criadas no Banco
+
+[33mcommit 04f9f3fbaba6dcc252a632b9d35a7e9f5b4e8565[m
+Author: Sarah <sarah2017.andrade@gmail.com>
+Date:   Thu May 16 09:56:40 2024 -0300
+
+    Modelos criados
+
+[33mcommit bb40cd6dc9243eeb7bfd28fdc2b625d5b5b5285b[m
+Author: Sarah <sarah2017.andrade@gmail.com>
+Date:   Wed May 15 16:48:44 2024 -0300
+
+    Primeiro commit

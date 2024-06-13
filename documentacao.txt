@@ -28,4 +28,4 @@ TAREFAS
         "descricao":
     }
     PUT/tarefa/entregar/:id - entregar Tarefa
-    DELETE/tarefa/:id
+    DELETE/tarefa/:id- deleta tarefa

@@ -19,7 +19,7 @@ function listnPendentes (req,res) {
 function create (req,res) {
     service.create(req.body)
         .then((novoResponsavel) =>{
-            return res.send({
+            return res.status(201).send({
                 message:"Novo Responsavel criado",
                 responsavel: novoResponsavel
             })
@@ -31,7 +31,7 @@ function create (req,res) {
 function update (req,res) {
     service.update(req.params.id,req.body)
         .then((ResponsavelEditado) =>{
-            return res.status(201).send({
+            return res.status(200).send({
                 message:"Responsavel editado",
                 responsavel: ResponsavelEditado
             })
