@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 
 app.use("/responsavel", responsavelRouter)
-app.use("/tarefa", tarefaRouter)
+app.use("/tarefas", tarefaRouter)
 
 app.listen(process.env.PORT ,console.log(`Servidor escutando na porta ${process.env.PORT}`))
 
