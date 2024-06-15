@@ -4,8 +4,10 @@ const express = require("express")
 const responsavelRouter = require("./routes/responsavel")
 const tarefaRouter = require("./routes/tarefa")
 
-
 const app = express()
+const cors = require('cors')
+app.use(cors())
+
 app.use(express.json())
 
 app.use("/responsavel", responsavelRouter)
